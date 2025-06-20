@@ -29,8 +29,8 @@ def tavily_search(query, max_results=5):
 research_agent = Agent(
     name="ResearchAgent",
     model=model,
-    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, stock_fundamentals=True)],
-    tools=[tavily_search],
+    tools=[YFinanceTools(stock_price=True, analyst_recommendations=True, stock_fundamentals=True),tavily_search],
+    #tools=[],
     instructions=[
         "You are an investment research agent. Collect concise and relevant financial data using Tavily.",
         "Summarize findings clearly within 1000 tokens. Include only key updates on market trends, stock news, and fundamentals.",
